@@ -1,37 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo/logo.png";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut().then().catch();
+  };
+
   const menuLists = (
     <>
       <li>
         <Link to="/">Home</Link>
       </li>
-      <li tabIndex={0}>
-        <Link to="/package" className="justify-between">
-          Package
-          <svg
-            className="fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-          </svg>
+      <li className="dropdown dropdown-hover">
+        <Link to="/packages" tabIndex={0}>
+          Packages
         </Link>
-        <ul className="p-2">
+        <ul
+          tabIndex={0}
+          className="dropdown-content menu p-2 shadow rounded-box"
+        >
           <li>
-            <Link to="/package">Silver Pack</Link>
+            <Link to="/packages">Silver Pack</Link>
           </li>
           <li>
-            <Link to="/package">Gold Pack</Link>
+            <Link to="/packages">Gold Pack</Link>
           </li>
           <li>
-            <Link to="/package">Platinum Pack</Link>
+            <Link to="/packages">Platinum Pack</Link>
           </li>
         </ul>
+      </li>
+      <li>
+        <Link to="/blogs">Blogs</Link>
       </li>
       <li>
         <Link to="/about">About</Link>
@@ -74,7 +78,44 @@ const Header = () => {
         <ul className="menu menu-horizontal p-0">{menuLists}</ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-outline text-white">Book</button>
+        <Link to="/booking" className="mr-2">
+          <button className="btn btn-outline text-white">Book Now</button>
+        </Link>
+        {user?.email ? (
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img alt="" src="https://placeimg.com/80/80/people" />
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <Link className="justify-between">
+                  Profile
+                  <span className="badge">New</span>
+                </Link>
+              </li>
+              <li>
+                <Link>Settings</Link>
+              </li>
+              <li>
+                <button onClick={handleLogOut}>Logout</button>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <>
+            <Link to="/login" className="btn btn-outline text-white mr-2">
+              Login
+            </Link>
+            <Link to="/signup" className="btn btn-outline text-white">
+              Sign up
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );
