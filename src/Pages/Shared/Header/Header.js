@@ -40,7 +40,7 @@ const Header = () => {
   );
 
   return (
-    <div className="navbar bg-black">
+    <div className="navbar bg-black text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -67,7 +67,7 @@ const Header = () => {
           </ul>
         </div>
         <Link to="/">
-          <img src={logo} className="w-12" alt="logo" />
+          <img src={logo} className="w-12 md:ml-4" alt="logo" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
