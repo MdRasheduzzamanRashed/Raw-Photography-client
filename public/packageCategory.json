@@ -1,6 +1,5 @@
 [
   {
-    "_id": "1",
     "category": "Silver Package",
     "duration": "4 Hours",
     "rawImage": "Unlimited",
@@ -13,14 +12,12 @@
     "price": "15000",
     "photographer": [
       {
-        "_id": "636b8be46004eagfhd95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
         "experience": 8,
-        "expert":"Wedding, Modeling Photography and Cinematography"
+        "expert": "Wedding, Modeling Photography and Cinematography"
       },
       {
-        "_id": "636b8be46004ea9ghr5a44418cf",
         "picture": "https://i.ibb.co/W0zdzDn/photographer-698908-960-720.jpg",
         "name": "Md Rasheduzzaman",
         "experience": 6,
@@ -29,7 +26,6 @@
     ]
   },
   {
-    "_id": "2",
     "category": "Gold Package",
     "duration": "4 Hours",
     "rawImage": "Unlimited",
@@ -42,37 +38,32 @@
     "price": "25000",
     "photographer": [
       {
-        "_id": "636b8be46004easf95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
         "experience": 8,
-        "expert":"Wedding, Modeling Photography and Cinematography"
+        "expert": "Wedding, Modeling Photography and Cinematography"
       },
       {
-        "_id": "636b8be46004eafgfh95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
         "experience": 8,
-        "expert":"Wedding, Modeling Photography and Cinematography"
+        "expert": "Wedding, Modeling Photography and Cinematography"
       },
       {
-        "_id": "636b8be46004ea95hgha44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
         "experience": 6,
-        "expert":"Photography and Cinematography"
+        "expert": "Photography and Cinematography"
       },
       {
-        "_id": "636b8be46004eagjs95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
         "experience": 4,
-        "expert":"Photography and Cinematography"
+        "expert": "Photography and Cinematography"
       }
     ]
   },
   {
-    "_id": "3",
     "category": "Platinum Package",
     "duration": "1 day",
     "rawImage": "Unlimited",
@@ -85,32 +76,28 @@
     "price": "50000",
     "photographer": [
       {
-        "_id": "636b8be46004eagfdfg95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
         "experience": 8,
-        "expert":"Wedding, Modeling Photography and Cinematography"
+        "expert": "Wedding, Modeling Photography and Cinematography"
       },
       {
-        "_id": "636b8be46004eshgsa95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
         "experience": 8,
-        "expert":"Wedding, Modeling Photography and Cinematography"
+        "expert": "Wedding, Modeling Photography and Cinematography"
       },
       {
-        "_id": "636b8be4600sfsg4ea95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
         "experience": 6,
-        "expert":"Photography and Cinematography"
+        "expert": "Photography and Cinematography"
       },
       {
-        "_id": "636b8be46004dghgfea95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
         "experience": 6,
-        "expert":"Photography and Cinematography"
+        "expert": "Photography and Cinematography"
       }
     ]
   }

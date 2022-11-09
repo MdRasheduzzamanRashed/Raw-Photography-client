@@ -11,6 +11,7 @@ import About from "./../../Pages/About/About";
 import SilverPack from "./../../Pages/Home/Package/packageCategory/SilverPack";
 import PlatinumPack from "./../../Pages/Home/Package/packageCategory/PlatinumPack";
 import GoldPack from "./../../Pages/Home/Package/packageCategory/GoldPack";
+import PackageDetails from "../../Pages/Home/Package/PackageDetails";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../../Layout/Main");
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("http://localhost:5000/packages"),
       },
       {
         path: "/booking",
@@ -31,20 +33,27 @@ const router = createBrowserRouter([
       {
         path: "/packages",
         element: <Package></Package>,
+        loader: () => fetch("http://localhost:5000/packages"),
+      },
+      {
+        path: "/packages/:id",
+        element: <PackageDetails></PackageDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/packages/${params.id}`),
       },
       {
         path: "/silver-pack",
-        loader: () => fetch("packageCategory.json"),
+        loader: () => fetch("http://localhost:5000/categories"),
         element: <SilverPack></SilverPack>,
       },
       {
         path: "/gold-pack",
-        loader: () => fetch("packageCategory.json"),
+        loader: () => fetch("http://localhost:5000/categories"),
         element: <GoldPack></GoldPack>,
       },
       {
         path: "/platinum-pack",
-        loader: () => fetch("packageCategory.json"),
+        loader: () => fetch("http://localhost:5000/categories"),
         element: <PlatinumPack></PlatinumPack>,
       },
       {

@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
 import useTitle from "../../../hooks/useTitle";
 import PackageItem from "./PackageItem";
+import { useLoaderData } from "react-router-dom";
 
 const Package = () => {
-  const [packages, setPackages] = useState([]);
-  useTitle("Packages");
-  useEffect(() => {
-    fetch("http://localhost:5000/packages")
-      .then((res) => res.json())
-      .then((data) => setPackages(data));
-  }, []);
+  const packages = useLoaderData();
 
   return (
     <div className="w-full">
