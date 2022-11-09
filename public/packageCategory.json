@@ -11,20 +11,22 @@
       "R3": "50 Pcs"
     },
     "price": "15000",
-    "photographer": {
-      "senior1": {
-        "_id": "636b8be46004ea95a44418cf",
+    "photographer": [
+      {
+        "_id": "636b8be46004eagfhd95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
-        "experience": "8 years"
+        "experience": 8,
+        "expert":"Wedding, Modeling Photography and Cinematography"
       },
-      "assistant1": {
-        "_id": "636b8be46004ea95a44418cf",
+      {
+        "_id": "636b8be46004ea9ghr5a44418cf",
         "picture": "https://i.ibb.co/W0zdzDn/photographer-698908-960-720.jpg",
         "name": "Md Rasheduzzaman",
-        "experience": "8 years"
+        "experience": 6,
+        "expert": "Photography and Cinematography"
       }
-    }
+    ]
   },
   {
     "_id": "2",
@@ -38,32 +40,36 @@
       "R3": "50 Pcs"
     },
     "price": "25000",
-    "photographer": {
-      "senior1": {
-        "_id": "636b8be46004ea95a44418cf",
+    "photographer": [
+      {
+        "_id": "636b8be46004easf95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
-        "experience": "8 years"
+        "experience": 8,
+        "expert":"Wedding, Modeling Photography and Cinematography"
       },
-      "assistant1": {
-        "_id": "636b8be46004ea95a44418cf",
+      {
+        "_id": "636b8be46004eafgfh95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
-        "experience": "8 years"
+        "experience": 8,
+        "expert":"Wedding, Modeling Photography and Cinematography"
       },
-      "senior2": {
-        "_id": "636b8be46004ea95a44418cf",
+      {
+        "_id": "636b8be46004ea95hgha44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
-        "experience": "8 years"
+        "experience": 6,
+        "expert":"Photography and Cinematography"
       },
-      "assistant2": {
-        "_id": "636b8be46004ea95a44418cf",
+      {
+        "_id": "636b8be46004eagjs95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
-        "experience": "8 years"
+        "experience": 4,
+        "expert":"Photography and Cinematography"
       }
-    }
+    ]
   },
   {
     "_id": "3",
@@ -77,31 +83,35 @@
       "R3": "50 Pcs"
     },
     "price": "50000",
-    "photographer": {
-      "senior1": {
-        "_id": "636b8be46004ea95a44418cf",
+    "photographer": [
+      {
+        "_id": "636b8be46004eagfdfg95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
-        "experience": "8 years"
+        "experience": 8,
+        "expert":"Wedding, Modeling Photography and Cinematography"
       },
-      "assistant1": {
-        "_id": "636b8be46004ea95a44418cf",
+      {
+        "_id": "636b8be46004eshgsa95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
-        "experience": "8 years"
+        "experience": 8,
+        "expert":"Wedding, Modeling Photography and Cinematography"
       },
-      "senior2": {
-        "_id": "636b8be46004ea95a44418cf",
+      {
+        "_id": "636b8be4600sfsg4ea95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
-        "experience": "8 years"
+        "experience": 6,
+        "expert":"Photography and Cinematography"
       },
-      "assistant2": {
-        "_id": "636b8be46004ea95a44418cf",
+      {
+        "_id": "636b8be46004dghgfea95a44418cf",
         "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
         "name": "Md Rasheduzzaman",
-        "experience": "8 years"
+        "experience": 6,
+        "expert":"Photography and Cinematography"
       }
-    }
+    ]
   }
 ]
