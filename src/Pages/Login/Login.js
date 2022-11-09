@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   const { login } = useContext(AuthContext);
@@ -51,8 +52,10 @@ const Login = () => {
             alt=""
           />
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-20">
-          <h1 className="text-5xl text-center font-bold">Login</h1>
+        <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 py-20">
+          <h1 className="text-5xl text-center text-orange-500 font-bold">
+            Login
+          </h1>
           <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -61,7 +64,7 @@ const Login = () => {
               <input
                 type="text"
                 name="email"
-                placeholder="email"
+                placeholder="Enter your email"
                 className="input input-bordered"
               />
             </div>
@@ -72,11 +75,11 @@ const Login = () => {
               <input
                 type="password"
                 name="password"
-                placeholder="password"
+                placeholder="Enter your password"
                 className="input input-bordered"
               />
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
+                <a href="/" className="label-text-alt link link-hover">
                   Forgot password?
                 </a>
               </label>
@@ -85,9 +88,14 @@ const Login = () => {
               <input className="btn btn-primary" type="submit" value="Login" />
             </div>
           </form>
+          <Link className="flex items-center justify-center mb-4">
+            Log in with Google
+            <FcGoogle className="ml-2"></FcGoogle>
+          </Link>
+
           <p className="text-center">
-            New to Raw Photography
-            <Link className="text-orange-600 font-bold" to="/signup">
+            New to Raw Photography!
+            <Link className="text-orange-600 font-bold ml-1" to="/signup">
               Sign Up
             </Link>
           </p>

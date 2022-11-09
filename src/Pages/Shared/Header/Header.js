@@ -21,16 +21,16 @@ const Header = () => {
         </Link>
         <ul
           tabIndex={0}
-          className="dropdown-content menu p-2 shadow rounded-box"
+          className="dropdown-content menu p-2 shadow bg-orange-600 bg-opacity-50 rounded-box"
         >
           <li>
-            <Link to="/packages">Silver Pack</Link>
+            <Link to="/silver-pack">Silver Pack</Link>
           </li>
           <li>
-            <Link to="/packages">Gold Pack</Link>
+            <Link to="/gold-pack">Gold Pack</Link>
           </li>
           <li>
-            <Link to="/packages">Platinum Pack</Link>
+            <Link to="/platinum-pack">Platinum Pack</Link>
           </li>
         </ul>
       </li>
@@ -44,7 +44,7 @@ const Header = () => {
   );
 
   return (
-    <div className="navbar bg-black text-white">
+    <div className="navbar bg-orange-500 text-white font-medium">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -85,7 +85,14 @@ const Header = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img alt="" src="https://placeimg.com/80/80/people" />
+                <img
+                  alt=""
+                  src={
+                    user?.photoURL
+                      ? user.photoURL
+                      : "https://i.ibb.co/QkZmQT4/default-avatar.png"
+                  }
+                />
               </div>
             </label>
             <ul
@@ -93,13 +100,13 @@ const Header = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link className="justify-between">
+                <Link to='/profile' className="justify-between">
                   Profile
                   <span className="badge">New</span>
                 </Link>
               </li>
               <li>
-                <Link>Settings</Link>
+                <Link to='/bookings'>Bookings</Link>
               </li>
               <li>
                 <button onClick={handleLogOut}>Logout</button>

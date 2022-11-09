@@ -4,7 +4,7 @@ import { FaFacebook, FaFlickr, FaGoogle } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-black text-neutral-content">
+    <footer className="footer p-10 bg-orange-500 text-white font-medium">
       <div>
         <img src={logo} className="w-12" alt="LOGO" />
         <p>
@@ -14,7 +14,7 @@ const Footer = () => {
         </p>
       </div>
       <div>
-        <span className="footer-title">Social</span>
+        <span className="text-white uppercase text-lg">Social</span>
         <div className="grid grid-flow-col gap-4">
           <a href="https://www.facebook.com/mrzgallery">
             <FaFacebook className=" text-3xl"></FaFacebook>

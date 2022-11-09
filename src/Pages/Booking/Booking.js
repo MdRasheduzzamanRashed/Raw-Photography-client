@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import useTitle from "./../../hooks/useTitle";
 
 const Booking = () => {
+  useTitle("Booking");
   const { user } = useContext(AuthContext);
   return (
     <div>
@@ -14,12 +16,14 @@ const Booking = () => {
             type="text"
             name="name"
             className="input input-bordered w-full "
+            defaultValue={user?.name}
             placeholder="Enter your name"
           />
           <input
             type="email"
             name="email"
             className="input input-bordered w-full "
+            defaultValue={user?.email}
             placeholder="Enter your email"
           />
           <input

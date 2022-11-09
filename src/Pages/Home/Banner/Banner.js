@@ -48,7 +48,6 @@ const bannerData = [
 ];
 
 const Banner = () => {
-    
     return (
       <div className="carousel pb-10">
         {bannerData.map((slide) => (

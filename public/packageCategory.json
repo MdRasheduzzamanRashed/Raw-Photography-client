@@ -1,0 +1,107 @@
+[
+  {
+    "_id": "1",
+    "category": "Silver Package",
+    "duration": "4 Hours",
+    "rawImage": "Unlimited",
+    "editedImage": "100 Pcs",
+    "images": {
+      "R10": "01 Pcs",
+      "R5": "03 Pcs",
+      "R3": "50 Pcs"
+    },
+    "price": "15000",
+    "photographer": {
+      "senior1": {
+        "_id": "636b8be46004ea95a44418cf",
+        "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
+        "name": "Md Rasheduzzaman",
+        "experience": "8 years"
+      },
+      "assistant1": {
+        "_id": "636b8be46004ea95a44418cf",
+        "picture": "https://i.ibb.co/W0zdzDn/photographer-698908-960-720.jpg",
+        "name": "Md Rasheduzzaman",
+        "experience": "8 years"
+      }
+    }
+  },
+  {
+    "_id": "2",
+    "category": "Gold Package",
+    "duration": "4 Hours",
+    "rawImage": "Unlimited",
+    "editedImage": "150 Pcs",
+    "images": {
+      "R10": "01 Pcs",
+      "R5": "03 Pcs",
+      "R3": "50 Pcs"
+    },
+    "price": "25000",
+    "photographer": {
+      "senior1": {
+        "_id": "636b8be46004ea95a44418cf",
+        "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
+        "name": "Md Rasheduzzaman",
+        "experience": "8 years"
+      },
+      "assistant1": {
+        "_id": "636b8be46004ea95a44418cf",
+        "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
+        "name": "Md Rasheduzzaman",
+        "experience": "8 years"
+      },
+      "senior2": {
+        "_id": "636b8be46004ea95a44418cf",
+        "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
+        "name": "Md Rasheduzzaman",
+        "experience": "8 years"
+      },
+      "assistant2": {
+        "_id": "636b8be46004ea95a44418cf",
+        "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
+        "name": "Md Rasheduzzaman",
+        "experience": "8 years"
+      }
+    }
+  },
+  {
+    "_id": "3",
+    "category": "Platinum Package",
+    "duration": "1 day",
+    "rawImage": "Unlimited",
+    "editedImage": "150 Pcs",
+    "images": {
+      "R10": "02 Pcs",
+      "R5": "05 Pcs",
+      "R3": "50 Pcs"
+    },
+    "price": "50000",
+    "photographer": {
+      "senior1": {
+        "_id": "636b8be46004ea95a44418cf",
+        "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
+        "name": "Md Rasheduzzaman",
+        "experience": "8 years"
+      },
+      "assistant1": {
+        "_id": "636b8be46004ea95a44418cf",
+        "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
+        "name": "Md Rasheduzzaman",
+        "experience": "8 years"
+      },
+      "senior2": {
+        "_id": "636b8be46004ea95a44418cf",
+        "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
+        "name": "Md Rasheduzzaman",
+        "experience": "8 years"
+      },
+      "assistant2": {
+        "_id": "636b8be46004ea95a44418cf",
+        "picture": "https://i.ibb.co/KXgpMMn/IMG-20170113-124942.jpg",
+        "name": "Md Rasheduzzaman",
+        "experience": "8 years"
+      }
+    }
+  }
+]

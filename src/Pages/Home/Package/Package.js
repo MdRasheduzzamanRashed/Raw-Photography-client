@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import useTitle from "../../../hooks/useTitle";
 import PackageItem from "./PackageItem";
 
 const Package = () => {
   const [packages, setPackages] = useState([]);
+  useTitle("Packages");
   useEffect(() => {
     fetch("http://localhost:5000/packages")
       .then((res) => res.json())
@@ -12,7 +14,7 @@ const Package = () => {
   return (
     <div className="w-full">
       <div>
-        <h2 className="text-4xl font-bold text-center mb-10 bg-black text-white py-3">
+        <h2 className="text-4xl font-bold text-center my-10 bg-orange-500 text-white py-3">
           Packages
         </h2>
         <p></p>

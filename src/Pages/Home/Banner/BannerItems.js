@@ -18,12 +18,12 @@ const BannerItems = ({ slide }) => {
         <h3 className="md:text-3xl font-semibold text-white">
           For Any Event, Anywhere in Bangladesh
         </h3>
-        <Link to='/book' className="btn mt-2">
+        <Link to='/book' className="btn bg-orange-500 mt-2">
           <button>Hire Me</button>
         </Link>
       </div>
       <div className="absolute flex justify-between top-1/2 transform -translate-y-1/2 left-5 right-5">
-        <a href={`#slide${prev}`} className="btn btn-circle mr-5">
+        <a href={`#slide${prev}`} className="btn btn-circle">
           ❮
         </a>
         <a href={`#slide${next}`} className="btn btn-circle">
