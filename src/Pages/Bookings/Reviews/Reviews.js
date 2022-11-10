@@ -1,16 +1,13 @@
-import React from "react";
-import { useState } from "react";
-import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
-import { useEffect } from "react";
-import BookingsRow from "./BookingsRow";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import ReviewRow from "./ReviewRow";
 
-const Bookings = () => {
+const Reviews = () => {
   const { user } = useContext(AuthContext);
-  const [bookings, setBookings] = useState([]);
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/bookings?email=${user?.email}`, {
+    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("raw-token")}`,
       },
@@ -21,16 +18,16 @@ const Bookings = () => {
         }
         return res.json();
       })
-      .then((data) => setBookings(data));
+      .then((data) => setReviews(data));
   }, [user?.email]);
-  console.log(bookings);
+  console.log(reviews);
 
   const handleDelete = (id) => {
     const proceed = window.confirm(
       "Are you sure, you want to cancel this booking"
     );
     if (proceed) {
-      fetch(`http://localhost:5000/bookings/${id}`, {
+      fetch(`http://localhost:5000/reviews/${id}`, {
         method: "DELETE",
         headers: {
           authorization: `Bearer ${localStorage.getItem("raw-token")}`,
@@ -40,8 +37,8 @@ const Bookings = () => {
         .then((data) => {
           if (data.deletedCount > 0) {
             alert("deleted successfully");
-            const remaining = bookings.filter((odr) => odr._id !== id);
-            setBookings(remaining);
+            const remaining = reviews.filter((rev) => rev._id !== id);
+            setReviews(remaining);
           }
         });
     }
@@ -49,7 +46,7 @@ const Bookings = () => {
 
   return (
     <div>
-      <h2 className=" text-3xl text-center font-bold my-5">Your Bookings</h2>
+      <h2 className=" text-3xl text-center font-bold my-5">Your Reviews</h2>
       <div className="overflow-x-auto w-full">
         <table className="table table-auto w-full">
           <thead>
@@ -57,18 +54,17 @@ const Bookings = () => {
               <th>Remove</th>
               <th>Package Name</th>
               <th>Category Name</th>
-              <th>Duration</th>
-              <th>Package Fee</th>
+              <th>Rating</th>
               <th>Review</th>
             </tr>
           </thead>
           <tbody>
-            {bookings.map((booking) => (
-              <BookingsRow
-                key={bookings._id}
-                booking={booking}
+            {reviews.map((review) => (
+              <ReviewRow
+                key={reviews._id}
+                review={review}
                 handleDelete={handleDelete}
-              ></BookingsRow>
+              ></ReviewRow>
             ))}
           </tbody>
         </table>
@@ -77,4 +73,4 @@ const Bookings = () => {
   );
 };
 
-export default Bookings;
+export default Reviews;

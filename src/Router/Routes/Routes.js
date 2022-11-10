@@ -12,7 +12,8 @@ import SilverPack from "./../../Pages/Home/Package/packageCategory/SilverPack";
 import PlatinumPack from "./../../Pages/Home/Package/packageCategory/PlatinumPack";
 import GoldPack from "./../../Pages/Home/Package/packageCategory/GoldPack";
 import PackageDetails from "../../Pages/Home/Package/PackageDetails";
-import CategoriesDetails from './../../Pages/Home/Package/packageCategory/CategoriesDetails';
+import CategoriesDetails from "./../../Pages/Home/Package/packageCategory/CategoriesDetails";
+import Reviews from "../../Pages/Bookings/Reviews/Reviews";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../../Layout/Main");
@@ -85,6 +86,22 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Bookings></Bookings>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/review",
+        element: (
+          <PrivateRoute>
+            <Reviews></Reviews>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/reviews",
+        element: (
+          <PrivateRoute>
+            <Reviews></Reviews>
           </PrivateRoute>
         ),
       },

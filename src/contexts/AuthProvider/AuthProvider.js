@@ -10,6 +10,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
+import Review from "../../Pages/Bookings/Reviews/Review";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -43,6 +44,14 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
+  const handleReview = (packageName, categoryName) => {
+    const clientInfo = {
+      packageName: packageName,
+      categoryName: categoryName,
+    };
+    return <Review clientInfo={clientInfo}></Review>;
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -62,6 +71,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     updateUserProfile,
     googleLogin,
+    handleReview,
   };
 
   return (

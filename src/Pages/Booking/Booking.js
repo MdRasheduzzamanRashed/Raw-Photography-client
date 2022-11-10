@@ -8,8 +8,8 @@ const Booking = () => {
   const { user } = useContext(AuthContext);
   const [selectPackage, setSelectPackage] = useState("Wedding Photography");
   const [selectCategory, setSelectCategory] = useState("Silver Package");
-  const [fee, setFee] = useState('15000');
-  const [duration, setDuration] = useState('4 Hours');
+  const [fee, setFee] = useState("15000");
+  const [duration, setDuration] = useState("4 Hours");
 
   const categories = useLoaderData();
 
@@ -34,6 +34,7 @@ const Booking = () => {
     const email = user.email;
     const mobile = form.mobile.value;
     const address = form.address.value;
+    const details = form.details.value;
 
     const booking = {
       packageName: selectPackage,
@@ -44,6 +45,7 @@ const Booking = () => {
       address: address,
       fee: fee,
       duration: duration,
+      details: details,
     };
 
     fetch("http://localhost:5000/bookings", {
@@ -134,6 +136,7 @@ const Booking = () => {
         </div>
         <div>
           <textarea
+            name="details"
             className="textarea textarea-bordered w-full mt-3"
             placeholder="Please write in details if possible"
           ></textarea>
