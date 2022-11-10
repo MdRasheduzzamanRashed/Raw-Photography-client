@@ -1,14 +1,12 @@
 import React from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
-
-
-
-
+import useTitle from "./../../hooks/useTitle";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
-
+  const profileName = user?.displayName ? user.displayName : "Profile";
+  useTitle(profileName);
   return (
     <div className="flex flex-col items-center justify-center md:my-24">
       <div className="avatar">
@@ -22,7 +20,6 @@ const Profile = () => {
         </h2>
         <p className="text-xl">{user?.email}</p>
       </div>
-
     </div>
   );
 };

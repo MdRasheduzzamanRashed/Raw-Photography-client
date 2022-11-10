@@ -1,38 +1,45 @@
 import React, { useContext, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import ReviewRow from "./ReviewRow";
+import useTitle from "./../../../hooks/useTitle";
 
 const Reviews = () => {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
-
+  useTitle("Reviews");
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("raw-token")}`,
-      },
-    })
+    fetch(
+      `https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/reviews?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("raw-token")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
-          return console.log("error");
+          return toast.error("error");
         }
         return res.json();
       })
       .then((data) => setReviews(data));
   }, [user?.email]);
-  console.log(reviews);
 
   const handleDelete = (id) => {
     const proceed = window.confirm(
       "Are you sure, you want to cancel this booking"
     );
     if (proceed) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
-        method: "DELETE",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("raw-token")}`,
-        },
-      })
+      fetch(
+        `https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/reviews/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("raw-token")}`,
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
@@ -53,7 +60,6 @@ const Reviews = () => {
             <tr>
               <th>Remove</th>
               <th>Package Name</th>
-              <th>Category Name</th>
               <th>Rating</th>
               <th>Review</th>
             </tr>
@@ -61,7 +67,7 @@ const Reviews = () => {
           <tbody>
             {reviews.map((review) => (
               <ReviewRow
-                key={reviews._id}
+                key={review}
                 review={review}
                 handleDelete={handleDelete}
               ></ReviewRow>

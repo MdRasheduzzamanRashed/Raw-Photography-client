@@ -14,6 +14,7 @@ import GoldPack from "./../../Pages/Home/Package/packageCategory/GoldPack";
 import PackageDetails from "../../Pages/Home/Package/PackageDetails";
 import CategoriesDetails from "./../../Pages/Home/Package/packageCategory/CategoriesDetails";
 import Reviews from "../../Pages/Bookings/Reviews/Reviews";
+import Review from "./../../Pages/Bookings/Reviews/Review";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../../Layout/Main");
@@ -26,42 +27,65 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/packages"),
+        loader: () =>
+          fetch(
+            "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/packages"
+          ),
       },
       {
         path: "/booking",
-        loader: () => fetch("http://localhost:5000/categories"),
+        loader: () =>
+          fetch(
+            "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/categories"
+          ),
         element: <Booking></Booking>,
       },
       {
         path: "/packages",
         element: <Package></Package>,
-        loader: () => fetch("http://localhost:5000/packages"),
+        loader: () =>
+          fetch(
+            "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/packages"
+          ),
       },
       {
         path: "/packages/:id",
         element: <PackageDetails></PackageDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/packages/${params.id}`),
+          fetch(
+            `https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/packages/${params.id}`
+          ),
       },
       {
         path: "/silver-pack",
-        loader: () => fetch("http://localhost:5000/categories"),
+        loader: () =>
+          fetch(
+            "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/categories"
+          ),
         element: <SilverPack></SilverPack>,
       },
       {
         path: "/gold-pack",
-        loader: () => fetch("http://localhost:5000/categories"),
+        loader: () =>
+          fetch(
+            "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/categories"
+          ),
         element: <GoldPack></GoldPack>,
       },
       {
         path: "/platinum-pack",
-        loader: () => fetch("http://localhost:5000/categories"),
+        loader: () =>
+          fetch(
+            "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/categories"
+          ),
         element: <PlatinumPack></PlatinumPack>,
       },
       {
         path: "/categories",
-        loader: () => fetch("http://localhost:5000/categories"),
+        loader: () =>
+          fetch(
+            "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/categories"
+          ),
         element: <CategoriesDetails></CategoriesDetails>,
       },
       {
@@ -93,7 +117,7 @@ const router = createBrowserRouter([
         path: "/review",
         element: (
           <PrivateRoute>
-            <Reviews></Reviews>
+            <Review></Review>
           </PrivateRoute>
         ),
       },

@@ -6,7 +6,6 @@ import toast from "react-hot-toast";
 
 const Login = () => {
   const { login, googleLogin } = useContext(AuthContext);
-  console.log(login);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -24,18 +23,19 @@ const Login = () => {
         const currentUser = {
           email: user.email,
         };
-        console.log(currentUser);
         //jwt token
-        fetch("http://localhost:5000/jwt", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(currentUser),
-        })
+        fetch(
+          "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/jwt",
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(currentUser),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             // store jwt token in local storage
             localStorage.setItem("raw-token", data.token);
             navigate(from, { replace: true });
@@ -43,7 +43,6 @@ const Login = () => {
       })
       .catch((error) => {
         toast.error("Please enter correct info");
-        console.log(error);
       });
   };
 
@@ -54,18 +53,19 @@ const Login = () => {
         const currentUser = {
           email: user.email,
         };
-        console.log(currentUser);
         //jwt token
-        fetch("http://localhost:5000/jwt", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(currentUser),
-        })
+        fetch(
+          "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/jwt",
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(currentUser),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             // store jwt token in local storage
             localStorage.setItem("raw-token", data.token);
             navigate(from, { replace: true });
@@ -73,7 +73,6 @@ const Login = () => {
       })
       .catch((error) => {
         toast.error("Please enter correct info");
-        console.log(error);
       });
   };
 

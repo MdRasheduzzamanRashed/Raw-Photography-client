@@ -18,7 +18,7 @@ const BannerItems = ({ slide }) => {
         <h3 className="md:text-3xl font-semibold text-white">
           For Any Event, Anywhere in Bangladesh
         </h3>
-        <Link to='/book' className="btn bg-orange-500 mt-2">
+        <Link to='/booking' className="btn bg-orange-500 mt-2">
           <button>Hire Me</button>
         </Link>
       </div>

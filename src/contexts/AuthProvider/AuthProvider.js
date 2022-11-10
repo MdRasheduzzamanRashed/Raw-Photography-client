@@ -10,7 +10,6 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import Review from "../../Pages/Bookings/Reviews/Review";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -19,6 +18,7 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [packName, setPackName] = useState();
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -44,12 +44,8 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  const handleReview = (packageName, categoryName) => {
-    const clientInfo = {
-      packageName: packageName,
-      categoryName: categoryName,
-    };
-    return <Review clientInfo={clientInfo}></Review>;
+  const handleReview = (packageName) => {
+    return setPackName(packageName);
   };
 
   useEffect(() => {
@@ -72,6 +68,7 @@ const AuthProvider = ({ children }) => {
     updateUserProfile,
     googleLogin,
     handleReview,
+    packName,
   };
 
   return (

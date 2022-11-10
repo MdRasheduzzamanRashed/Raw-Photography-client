@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import useTitle from "../../../hooks/useTitle";
 import PackageItem from "./PackageItem";
 import { useLoaderData } from "react-router-dom";
 
 const Package = () => {
   const packages = useLoaderData();
-
+  useTitle("Package");
   return (
     <div className="w-full">
       <div>

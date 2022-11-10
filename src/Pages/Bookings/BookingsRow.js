@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const BookingsRow = ({ booking, handleDelete }) => {
@@ -17,9 +18,9 @@ const BookingsRow = ({ booking, handleDelete }) => {
       <td>{duration}</td>
       <td>{fee}</td>
       <td>
-        <button onClick={() => handleReview(packageName, categoryName)}>
-          Review
-        </button>
+        <Link to="/review">
+          <button onClick={() => handleReview(packageName)}>Review</button>
+        </Link>
       </td>
     </tr>
   );

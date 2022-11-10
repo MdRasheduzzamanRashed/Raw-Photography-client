@@ -23,9 +23,7 @@ const Booking = () => {
     );
     setDuration(selectedCategory.duration);
     setFee(selectedCategory.price);
-    console.log(selectedCategory);
   };
-  console.log(selectCategory, selectPackage);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,17 +46,19 @@ const Booking = () => {
       details: details,
     };
 
-    fetch("http://localhost:5000/bookings", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("raw-token")}`,
-      },
-      body: JSON.stringify(booking),
-    })
+    fetch(
+      "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/bookings",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("raw-token")}`,
+        },
+        body: JSON.stringify(booking),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.acknowledged) {
           alert("Booking placed successfully");
           form.reset();

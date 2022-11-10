@@ -4,38 +4,45 @@ import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import { useEffect } from "react";
 import BookingsRow from "./BookingsRow";
+import toast from "react-hot-toast";
+import useTitle from "./../../hooks/useTitle";
 
 const Bookings = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
-
+  useTitle("Bookings");
   useEffect(() => {
-    fetch(`http://localhost:5000/bookings?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("raw-token")}`,
-      },
-    })
+    fetch(
+      `https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/bookings?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("raw-token")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
-          return console.log("error");
+          return toast.error("error");
         }
         return res.json();
       })
       .then((data) => setBookings(data));
   }, [user?.email]);
-  console.log(bookings);
 
   const handleDelete = (id) => {
     const proceed = window.confirm(
       "Are you sure, you want to cancel this booking"
     );
     if (proceed) {
-      fetch(`http://localhost:5000/bookings/${id}`, {
-        method: "DELETE",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("raw-token")}`,
-        },
-      })
+      fetch(
+        `https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/bookings/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("raw-token")}`,
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
@@ -65,7 +72,7 @@ const Bookings = () => {
           <tbody>
             {bookings.map((booking) => (
               <BookingsRow
-                key={bookings._id}
+                key={booking}
                 booking={booking}
                 handleDelete={handleDelete}
               ></BookingsRow>

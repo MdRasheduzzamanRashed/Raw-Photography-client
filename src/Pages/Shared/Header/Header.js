@@ -106,7 +106,10 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to='/bookings'>Bookings</Link>
+                <Link to='/bookings'>My Bookings</Link>
+              </li>
+              <li>
+                <Link to='/reviews'>My Reviews</Link>
               </li>
               <li>
                 <button onClick={handleLogOut}>Logout</button>

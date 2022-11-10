@@ -1,7 +1,7 @@
 import React from "react";
 
 const ReviewRow = ({ review, handleDelete }) => {
-  const { _id, packageName, categoryName, rating, reviewDetails } = review;
+  const { _id, packageName, rating, rev } = review;
   return (
     <tr>
       <td>
@@ -10,9 +10,8 @@ const ReviewRow = ({ review, handleDelete }) => {
         </button>
       </td>
       <td>{packageName}</td>
-      <td>{categoryName}</td>
       <td>{rating}</td>
-      <td>{reviewDetails}</td>
+      <td>{rev}</td>
     </tr>
   );
 };

@@ -2,10 +2,9 @@ import React, { useContext } from "react";
 import useTitle from "./../../../hooks/useTitle";
 import { AuthContext } from "./../../../contexts/AuthProvider/AuthProvider";
 
-const Review = ({ clientInfo }) => {
+const Review = () => {
   useTitle("Review");
-  const { user } = useContext(AuthContext);
-
+  const { user, packName } = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -13,29 +12,29 @@ const Review = ({ clientInfo }) => {
     const name = user.displayName;
     const email = user.email;
     const rev = form.rev.value;
-    const selectPackage = clientInfo.selectPackage;
-    const selectCategory = clientInfo.selectCategory;
+    const selectPackage = packName;
 
     const review = {
       packageName: selectPackage,
-      categoryName: selectCategory,
       rating: rating,
       email: email,
       name: name,
       rev: rev,
     };
 
-    fetch("http://localhost:5000/reviews", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("raw-token")}`,
-      },
-      body: JSON.stringify(review),
-    })
+    fetch(
+      "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/reviews",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("raw-token")}`,
+        },
+        body: JSON.stringify(review),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.acknowledged) {
           alert("Review submitted successfully");
           form.reset();
@@ -45,17 +44,28 @@ const Review = ({ clientInfo }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="number" className="input input-bordered" name="rating" />
-      <input
-        type="text"
-        name="rev"
-        className="textarea textarea-bordered w-full mt-3"
-        id=""
-        placeholder="Please write a review if possible"
-      />
-      <input type="submit" value="Submit" className="btn w-full" />
-    </form>
+    <div>
+      <h2 className="text-center text-2xl font-semibold my-5">
+        Write a Review on {packName}
+      </h2>
+      <form onSubmit={handleSubmit}>
+        <label>Rating</label>
+        <input
+          type="number"
+          name="rating"
+          className="input input-bordered w-full my-3"
+          placeholder="Rate the package between 1 to 10"
+        />
+        <label>Review</label>
+        <input
+          type="text"
+          name="rev"
+          className="input input-bordered w-full my-3"
+          placeholder="Please write a review if possible"
+        />
+        <input type="submit" value="Submit" className="btn w-full" />
+      </form>
+    </div>
   );
 };
 
