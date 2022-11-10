@@ -1,7 +1,7 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Photographer from "./Photographer/Photographer";
-import PackageDetails from "./PackageDetails";
+import CategoryDetails from './CategoryDetails';
 
 const PlatinumPack = () => {
   const packageCategory = useLoaderData();
@@ -21,7 +21,9 @@ const PlatinumPack = () => {
   return (
     <div className="flex flex-col items-center justify-center text-center my-5">
       <div className="w-full">
-        <h2 className="text-3xl font-bold uppercase">{category}</h2>
+        <h2 className="text-3xl font-bold uppercase bg-orange-500 py-2">
+          {category}
+        </h2>
         <div className="flex items-center justify-evenly mt-3">
           <p className=" text-lg font-medium">Duration: {duration}</p>
           <p className=" text-lg font-medium">Package Fee: {price} BDT</p>
@@ -34,13 +36,16 @@ const PlatinumPack = () => {
       </div>
       <div className="w-full mt-5">
         {
-          <PackageDetails
+          <CategoryDetails
             img={images}
             edImg={editedImage}
             raw={rawImage}
-          ></PackageDetails>
+          ></CategoryDetails>
         }
       </div>
+      <Link to="/booking" className="mb-5">
+        <button className="btn bg-orange-500">Book Schedule</button>
+      </Link>
     </div>
   );
 };

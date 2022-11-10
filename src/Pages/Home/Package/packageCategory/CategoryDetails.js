@@ -1,6 +1,6 @@
 import React from "react";
 
-const PackageDetails = ({ img, raw, edImg }) => {
+const CategoryDetails = ({ img, raw, edImg }) => {
   return (
     <table className="table table-zebra w-full text-center my-5">
       <thead>
@@ -47,4 +47,4 @@ const PackageDetails = ({ img, raw, edImg }) => {
   );
 };
 
-export default PackageDetails;
+export default CategoryDetails;

@@ -12,6 +12,7 @@ import SilverPack from "./../../Pages/Home/Package/packageCategory/SilverPack";
 import PlatinumPack from "./../../Pages/Home/Package/packageCategory/PlatinumPack";
 import GoldPack from "./../../Pages/Home/Package/packageCategory/GoldPack";
 import PackageDetails from "../../Pages/Home/Package/PackageDetails";
+import CategoriesDetails from './../../Pages/Home/Package/packageCategory/CategoriesDetails';
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../../Layout/Main");
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/booking",
+        loader: () => fetch("http://localhost:5000/categories"),
         element: <Booking></Booking>,
       },
       {
@@ -57,8 +59,14 @@ const router = createBrowserRouter([
         element: <PlatinumPack></PlatinumPack>,
       },
       {
+        path: "/categories",
+        loader: () => fetch("http://localhost:5000/categories"),
+        element: <CategoriesDetails></CategoriesDetails>,
+      },
+      {
         path: "/blogs",
         element: <Blogs></Blogs>,
+        loader: () => fetch("packageCategory.json"),
       },
       {
         path: "/about",

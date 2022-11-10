@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
+import toast from "react-hot-toast";
 
 const Login = () => {
-  const { login } = useContext(AuthContext);
+  const { login, googleLogin } = useContext(AuthContext);
   console.log(login);
   const location = useLocation();
   const navigate = useNavigate();
@@ -36,12 +37,46 @@ const Login = () => {
           .then((data) => {
             console.log(data);
             // store jwt token in local storage
-            localStorage.setItem("genius-token", data.token);
+            localStorage.setItem("raw-token", data.token);
             navigate(from, { replace: true });
           });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        toast.error("Please enter correct info");
+        console.log(error);
+      });
   };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+        const currentUser = {
+          email: user.email,
+        };
+        console.log(currentUser);
+        //jwt token
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            // store jwt token in local storage
+            localStorage.setItem("raw-token", data.token);
+            navigate(from, { replace: true });
+          });
+      })
+      .catch((error) => {
+        toast.error("Please enter correct info");
+        console.log(error);
+      });
+  };
+
   return (
     <div className="hero w-full my-20">
       <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
@@ -88,10 +123,13 @@ const Login = () => {
               <input className="btn btn-primary" type="submit" value="Login" />
             </div>
           </form>
-          <Link className="flex items-center justify-center mb-4">
+          <button
+            onClick={handleGoogleLogin}
+            className="flex items-center justify-center mb-4"
+          >
             Log in with Google
             <FcGoogle className="ml-2"></FcGoogle>
-          </Link>
+          </button>
 
           <p className="text-center">
             New to Raw Photography!
