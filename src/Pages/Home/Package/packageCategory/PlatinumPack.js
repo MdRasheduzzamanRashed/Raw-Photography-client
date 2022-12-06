@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import CategoryDetails from "./CategoryDetails";
 import Photographer from "./Photographer/Photographer";
-import CategoryDetails from './CategoryDetails';
 
 const PlatinumPack = () => {
   const packageCategory = useLoaderData();

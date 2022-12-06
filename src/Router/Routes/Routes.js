@@ -28,64 +28,50 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () =>
-          fetch(
-            "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/packages"
-          ),
+          fetch("https://raw-photography-server.vercel.app/packages"),
       },
       {
         path: "/booking",
         loader: () =>
-          fetch(
-            "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/categories"
-          ),
+          fetch("https://raw-photography-server.vercel.app/categories"),
         element: <Booking></Booking>,
       },
       {
         path: "/packages",
         element: <Package></Package>,
         loader: () =>
-          fetch(
-            "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/packages"
-          ),
+          fetch("https://raw-photography-server.vercel.app/packages"),
       },
       {
         path: "/packages/:id",
         element: <PackageDetails></PackageDetails>,
         loader: ({ params }) =>
           fetch(
-            `https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/packages/${params.id}`
+            `https://raw-photography-server.vercel.app/packages/${params.id}`
           ),
       },
       {
         path: "/silver-pack",
         loader: () =>
-          fetch(
-            "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/categories"
-          ),
+          fetch("https://raw-photography-server.vercel.app/categories"),
         element: <SilverPack></SilverPack>,
       },
       {
         path: "/gold-pack",
         loader: () =>
-          fetch(
-            "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/categories"
-          ),
+          fetch("https://raw-photography-server.vercel.app/categories"),
         element: <GoldPack></GoldPack>,
       },
       {
         path: "/platinum-pack",
         loader: () =>
-          fetch(
-            "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/categories"
-          ),
+          fetch("https://raw-photography-server.vercel.app/categories"),
         element: <PlatinumPack></PlatinumPack>,
       },
       {
         path: "/categories",
         loader: () =>
-          fetch(
-            "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/categories"
-          ),
+          fetch("https://raw-photography-server.vercel.app/categories"),
         element: <CategoriesDetails></CategoriesDetails>,
       },
       {

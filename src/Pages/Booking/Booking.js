@@ -46,17 +46,14 @@ const Booking = () => {
       details: details,
     };
 
-    fetch(
-      "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/bookings",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("raw-token")}`,
-        },
-        body: JSON.stringify(booking),
-      }
-    )
+    fetch("https://raw-photography-server.vercel.app/bookings", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("raw-token")}`,
+      },
+      body: JSON.stringify(booking),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {

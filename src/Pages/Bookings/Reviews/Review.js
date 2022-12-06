@@ -22,17 +22,14 @@ const Review = () => {
       rev: rev,
     };
 
-    fetch(
-      "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/reviews",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("raw-token")}`,
-        },
-        body: JSON.stringify(review),
-      }
-    )
+    fetch("https://raw-photography-server.vercel.app/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("raw-token")}`,
+      },
+      body: JSON.stringify(review),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {

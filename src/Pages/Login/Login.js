@@ -24,16 +24,13 @@ const Login = () => {
           email: user.email,
         };
         //jwt token
-        fetch(
-          "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/jwt",
-          {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(currentUser),
-          }
-        )
+        fetch("https://raw-photography-server.vercel.app/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
           .then((res) => res.json())
           .then((data) => {
             // store jwt token in local storage
@@ -54,16 +51,13 @@ const Login = () => {
           email: user.email,
         };
         //jwt token
-        fetch(
-          "https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/jwt",
-          {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(currentUser),
-          }
-        )
+        fetch("https://raw-photography-server.vercel.app/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
           .then((res) => res.json())
           .then((data) => {
             // store jwt token in local storage

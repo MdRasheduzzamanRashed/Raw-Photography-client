@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import CategoryDetails from "./CategoryDetails";
 import Photographer from "./Photographer/Photographer";
-import CategoryDetails from './CategoryDetails';
 
 const GoldPack = () => {
   const packageCategory = useLoaderData();
@@ -21,7 +21,9 @@ const GoldPack = () => {
   return (
     <div className="flex flex-col items-center justify-center text-center my-5">
       <div className="w-full">
-        <h2 className="text-3xl font-bold uppercase bg-orange-500 py-2">{category}</h2>
+        <h2 className="text-3xl font-bold uppercase bg-orange-500 py-2">
+          {category}
+        </h2>
         <div className="flex items-center justify-evenly mt-3">
           <p className=" text-lg font-medium">Duration: {duration}</p>
           <p className=" text-lg font-medium">Package Fee: {price} BDT</p>

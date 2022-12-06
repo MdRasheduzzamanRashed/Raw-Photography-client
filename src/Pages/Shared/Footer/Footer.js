@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../../assets/logo/logo.png";
-import { FaFacebook, FaFlickr, FaGoogle } from "react-icons/fa";
+import { FaFacebook, FaFlickr, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -19,8 +19,8 @@ const Footer = () => {
           <a href="https://www.facebook.com/mrzgallery">
             <FaFacebook className=" text-3xl"></FaFacebook>
           </a>
-          <a href="">
-            <FaGoogle className=" text-3xl"></FaGoogle>
+          <a href="https://www.instagram.com/mrzphotography96/">
+            <FaInstagram className=" text-3xl"></FaInstagram>
           </a>
           <a href="https://www.flickr.com/photos/mrgallery/">
             <FaFlickr className=" text-3xl"></FaFlickr>

@@ -10,7 +10,7 @@ const Reviews = () => {
   useTitle("Reviews");
   useEffect(() => {
     fetch(
-      `https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/reviews?email=${user?.email}`,
+      `https://raw-photography-server.vercel.app/reviews?email=${user?.email}`,
       {
         headers: {
           authorization: `Bearer ${localStorage.getItem("raw-token")}`,
@@ -31,15 +31,12 @@ const Reviews = () => {
       "Are you sure, you want to cancel this booking"
     );
     if (proceed) {
-      fetch(
-        `https://b6a11-service-review-server-side-md-rasheduzzaman-rashed.vercel.app/reviews/${id}`,
-        {
-          method: "DELETE",
-          headers: {
-            authorization: `Bearer ${localStorage.getItem("raw-token")}`,
-          },
-        }
-      )
+      fetch(`https://raw-photography-server.vercel.app/reviews/${id}`, {
+        method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("raw-token")}`,
+        },
+      })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
