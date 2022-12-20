@@ -10,7 +10,7 @@ const BannerItems = ({ slide }) => {
       </div>
       <div className="absolute transform -translate-y-1/2 top-1/2 text-center w-full">
         <h1 className="text-xl md:text-3xl font-bold text-white">
-          HIRE A{" "}
+          HIRE A
           <span className=" text-2xl md:text-3xl lg:text-5xl">
             PHOTOGRAPHER / CINEMATOGRAPHER
           </span>
