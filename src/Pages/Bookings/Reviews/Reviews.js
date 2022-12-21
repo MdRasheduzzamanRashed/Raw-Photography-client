@@ -64,7 +64,7 @@ const Reviews = () => {
           <tbody>
             {reviews.map((review) => (
               <ReviewRow
-                key={review}
+                key={review._id}
                 review={review}
                 handleDelete={handleDelete}
               ></ReviewRow>

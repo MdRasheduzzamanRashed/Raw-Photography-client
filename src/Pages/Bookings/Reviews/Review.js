@@ -8,7 +8,7 @@ const Review = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    const rating = form.rating.value;
+    const rating = parseInt(form.rating.value);
     const name = user.displayName;
     const email = user.email;
     const rev = form.rev.value;

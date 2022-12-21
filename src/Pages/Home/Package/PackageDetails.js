@@ -24,7 +24,7 @@ const PackageDetails = () => {
         </li>
       </ul>
       <Link to="/categories" className="mb-5">
-        <button className="btn bg-orange-500">Book Schedule</button>
+        <button className="btn bg-orange-500 text-white">View Package Category</button>
       </Link>
     </div>
   );
